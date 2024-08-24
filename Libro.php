@@ -43,7 +43,7 @@
             <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Categoria</label>
                 <select id="disabledSelect" class="form-select" name="categoria">
-                    <option value="ficcion" default >Ficción</option>
+                    <option value="ficcion" default>Ficción</option>
                     <option value="no_ficcion">No Ficción</option>
                     <option value="ciencia_ficcion">Ciencia Ficción</option>
                     <option value="fantasia">Fantasía</option>
@@ -102,7 +102,7 @@
 
                     // Generar las filas de la tabla dinámicamente
                     while ($datos = $result->fetch_object()) {
-                        $link = 'modificar_persona.php?id=' . $datos->ID;
+                        $link = 'modificar_libro.php?id=' . $datos->ID;
                         $link2 = 'Libro.php?id=' . $datos->ID;
                         echo <<<HTML
                 <tr>
