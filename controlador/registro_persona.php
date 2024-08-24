@@ -9,7 +9,7 @@ if (!empty($_POST["btnregistrar"])) {
         $documento = $_POST["documento"];
         $correo = $_POST["correo"];
 
-        $sql = $conexion->query("INSERT INTO usuarios ( Nombres, Apellidos, Tipo_de_documento, documento, correo) VALUES 
+        $sql = $conexion->query("INSERT INTO usuarios ( Nombres, Apellidos, tipo_doc, documento, correo) VALUES 
         ( '$nombre', '$apellido', '$tipo_doc', '$documento', '$correo')");
         if ($sql == 1) {
             echo '<div class="alert alert-success">Persona Registrado Correctamente! </div>';
