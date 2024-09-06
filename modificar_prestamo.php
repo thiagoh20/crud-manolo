@@ -28,9 +28,9 @@ $stmt->close();
 <body>
     <div class="container">
         <form class="col-4 pt-5 m-auto" method="POST">
-            <h3 class="text-center text-secondary">Editar prestamo</h3>
+            <h3 class="text-center text-secondary">Modificar prestamo</h3>
             <?php
-            include "controlador/modificar_prestamoCont.php";
+            include "prestamocontrolador/modificar_prestamoCont.php";
             ?>
             <input type="hidden" name="id" value="<?= $id; ?>">
             <div class="mb-3">

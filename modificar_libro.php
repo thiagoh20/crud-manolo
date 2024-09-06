@@ -80,7 +80,8 @@ $stmt->close();
 
             
             <button type="submit" name="btnregistrarLibro" class="btn btn-primary" value="ok">Actualizar</button>
-            <a href="Libro.php" class="btn btn-light">Cacelar</i></a>
+
+            <a href="Libro.php" class="btn btn-light">Cancelar</i></a>
 
         </form>
     </div>

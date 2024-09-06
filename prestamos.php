@@ -47,6 +47,9 @@
 
 
             <button type="submit" class="btn btn-primary" name="btnregistrarprestamos" value="ok">Ingresar</button>
+            <a href="inicioBiblio.php">
+            <button  type="button" class="btn btn-secondary">Regresar</button>
+        </a>
         </form>
         <div class="col-8 p-4">
             <table class="table">
