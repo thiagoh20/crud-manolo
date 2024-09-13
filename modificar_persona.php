@@ -60,7 +60,7 @@ $stmt->close();
             </div>
 
             
-            <button type="submit" name="btnregistrar" class="btn btn-primary" value="ok">Actualizar</button>
+            <button type="submit" name="btnregistrarindex" class="btn btn-primary" value="ok">Actualizar</button>
         </form>
     </div>
     <script src="path/to/bootstrap.js"></script> <!-- Reemplaza con la ruta a tu archivo JS de Bootstrap -->

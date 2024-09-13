@@ -10,12 +10,12 @@ if (!empty($_POST["btnregistrarprestamo"])) {
         $estado = $_POST["estado"];
         
         // Preparar la consulta de actualización
-        $stmt = $conexion->prepare("UPDATE prestamos SET id_usuario = ?, id_libro = ?, fecha_prestamo = ?, fecha_devolucion = ?, estado = ? WHERE ID = ?");
+        $stmt = $conexion->prepare("UPDATE prestamos SET ID_usuario = ?, ID_libro = ?, Fecha_prestamo = ?, Fecha_devolucion = ?, Estado = ? WHERE id = ?");
         if ($stmt === false) {
             echo '<div class="alert alert-danger">Error en la preparación de la consulta: ' . $conexion->error . '</div>';
         } else {
             // Vincular los parámetros. Los tipos de datos son 's' (string) para todos excepto 'i' (integer) para el ID.
-            $stmt->bind_param("ssssssi", $id_usuario, $id_libro, $fecha_prestamo, $fecha_devolucion, $estado, $id);
+            $stmt->bind_param("sssssi", $id_usuario, $id_libro, $fecha_prestamo, $fecha_devolucion, $estado, $id);
         
             // Ejecutar la consulta
             if ($stmt->execute()) {

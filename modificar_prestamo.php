@@ -28,18 +28,18 @@ $stmt->close();
 <body>
     <div class="container">
         <form class="col-4 pt-5 m-auto" method="POST">
-            <h3 class="text-center text-secondary">Editar prestamo</h3>
+            <h3 class="text-center text-secondary">Modificar prestamo</h3>
             <?php
-            include "controlador/modificar_prestamoCont.php";
+            include "prestamocontrolador/modificar_prestamoCont.php";
             ?>
             <input type="hidden" name="id" value="<?= $id; ?>">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Id usuario</label>
-                <input type="text" class="form-control" name="id_usuario" value="<?= $datos->id_usuario; ?>">
+                <input readonly type="text" class="form-control" name="id_usuario" value="<?= $datos->id_usuario; ?>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Id libro</label>
-                <input type="text" class="form-control" name="id_libro" value="<?= $datos->id_libro; ?>">
+                <input readonly  type="text" class="form-control" name="id_libro" value="<?= $datos->id_libro; ?>">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Fecha de prestamo</label>

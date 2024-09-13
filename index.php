@@ -52,6 +52,9 @@
 
 
             <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
+        <a href="inicioBiblio.php">
+            <button  type="button" class="btn btn-secondary">Regresar</button>
+        </a>
         </form>
         <div class="col-8 p-4">
             <table class="table">
@@ -63,7 +66,6 @@
                         <th scope="col">Tipo de documento</th>
                         <th scope="col">Documento</th>
                         <th scope="col">correo</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">

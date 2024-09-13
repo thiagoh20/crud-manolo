@@ -1,13 +1,13 @@
 <?php
 
-if (!empty($_POST["btnregistrar"])) {
-    if (!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["tipo_doc"]) and !empty($_POST["documento"]) and !empty($_POST["correo"])) {
+if (!empty($_POST["btnregistrarindex"])) {
+    if (!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["tipo_doc"]) and !empty($_POST["cedula"]) and !empty($_POST["correo"])) {
 
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
         $apellido = $_POST["apellido"];
         $tipo_doc = $_POST["tipo_doc"];
-        $documento = $_POST["documento"];
+        $documento = $_POST["cedula"];
         $correo = $_POST["correo"];
     
         // Preparar la consulta de actualización

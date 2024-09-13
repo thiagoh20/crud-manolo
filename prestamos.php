@@ -22,13 +22,68 @@
             <h3 class="text-center text-secondary">Registro del prestamo</h3>
 
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Id usuario</label>
-                <input type="number" class="form-control" name="id_usuario">
+                <label for="exampleInputEmail1" class="form-label">usuario</label>
+                <select id="disabledSelect" class="form-select" name="id_usuario">
+                    <option selected disabled="disabled">Seleccione Usuario</option>
+
+                    <?php
+                    include "modelo/conexion.php";
+                    $stmt = $conexion->prepare("SELECT ID, Nombres, Apellidos FROM usuarios");
+                    if ($stmt === false) {
+                        die("Error en la consulta SQL: " . $conexion->error);
+                    }
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    while ($datos = $result->fetch_object()) {
+                        $idUsuario = $datos->ID;
+                        echo <<<HTML
+                   
+                    <option value=$idUsuario>{$datos->Nombres} {$datos->Apellidos}</option>
+HTML;
+                    }
+
+                    $stmt->close();
+                    $conexion->close();
+                    ?>
+                </select>
 
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"> Id libro</label>
-                <input type="number" class="form-control" name="id_libro">
+                <label for="disabledSelect" class="form-label">libro</label>
+                <select id="disabledSelect" class="form-select" name="id_libro">
+                    <option selected disabled="disabled">Seleccione el libro</option>
+                    <?php
+                    include "modelo/conexion.php";
+                    // Preparar la consulta
+                    $stmt = $conexion->prepare("SELECT ID, Titulo FROM libros");
+
+
+                    // Verificar si la consulta se preparó correctamente
+                    if ($stmt === false) {
+                        die("Error en la consulta SQL: " . $conexion->error);
+                    }
+                    // Ejecutar la consulta
+                    $stmt->execute();
+
+                    // Obtener los resultados
+                    $result = $stmt->get_result();
+
+                    // Generar las filas de la tabla dinámicamente
+                    while ($datos = $result->fetch_object()) {
+                        $idLibro = $datos->ID;
+                        echo <<<HTML
+                   
+                    <option value=$idLibro>{$datos->ID} {$datos->Titulo}</option>
+                   
+               
+HTML;
+                    }
+
+                    // Cerrar la declaración y la conexión
+                    $stmt->close();
+                    $conexion->close();
+                    ?>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Fecha prestamo</label>
@@ -47,6 +102,9 @@
 
 
             <button type="submit" class="btn btn-primary" name="btnregistrarprestamos" value="ok">Ingresar</button>
+            <a href="inicioBiblio.php">
+                <button type="button" class="btn btn-secondary">Regresar</button>
+            </a>
         </form>
         <div class="col-8 p-4">
             <table class="table">
