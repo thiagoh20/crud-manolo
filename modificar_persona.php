@@ -51,7 +51,7 @@ $stmt->close();
             </div>
             <div class="mb-3">
                 <label for="cedula" class="form-label">Documento</label>
-                <input type="text" class="form-control" name="cedula" value="<?= $datos->documento; ?>">
+                <input type="text" class="form-control" name="documento" value="<?= $datos->documento; ?>">
             </div>
 
             <div class="mb-3">
