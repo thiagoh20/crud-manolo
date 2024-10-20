@@ -1,16 +1,16 @@
 <?php
 // Conexión a la base de datos (ajusta los parámetros según tu configuración)
-$conexion = new mysqli("localhost", "biblioteca", "biblio_manolo", "biblioteca");
+$conexion = new mysqli("localhost", "root", "", "biblioteca2");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
 // Obtener el ID del libro seleccionado
-$libro_id = $_POST['libro_id'];
+$libro_id = $_POST['id_libro'];
 
 // Registrar el préstamo en la tabla "prestamo"
-$sql = "INSERT INTO prestamo (libro_id, fecha_prestamo) VALUES (?, NOW())";
+$sql = "INSERT INTO prestamo (id_libro, fecha_prestamo) VALUES (?, NOW())";
 
 $stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $libro_id);
@@ -26,3 +26,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $conexion->close();
 ?>
+

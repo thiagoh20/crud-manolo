@@ -1,8 +1,12 @@
+
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $servername = "localhost";
-$username = "biblioteca";
-$password = "biblio_manolo";
-$dbname = "biblioteca";
+$username = "root";
+$password = "";
+$dbname = "biblioteca2";
 
 // Crear la conexión
 $conexion = new mysqli($servername, $username, $password, $dbname, 3307);
